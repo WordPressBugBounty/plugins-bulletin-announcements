@@ -40,7 +40,7 @@ const helpers = {
         return decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;
       }
       catch (e) {
-        return null;
+        return e && null;
       }
     },
     setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
@@ -87,7 +87,7 @@ const helpers = {
       return (new RegExp('(?:^|;\\s*)' + encodeURIComponent(sKey).replace(/[-.+*]/g, '\\$&') + '\\s*\\=')).test(document.cookie);
     },
     keys: function() {
-      let aKeys = document.cookie.replace(/((?:^|\s*;)[^=]+)(?=;|$)|^\s*|\s*(?:=[^;]*)?(?:\1|$)/g, '').split(/\s*(?:=[^;]*)?;\s*/);
+      let aKeys = document.cookie.replace(/(?:^|\s*;)\s*([^=]+)(?=\s*=)/g, '').split(/\s*(?:=[^;]*)?;\s*/);
       for (let nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) {
         aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]);
       }
@@ -111,7 +111,7 @@ const helpers = {
       try {
         return JSON.parse('{"' + decodeURI(params.replace(/&/g, ',').replace(/=/g,':')) + '"}');
       } catch (e) {
-        return {};
+        return e && {};
       }
     } else {
       return {};
@@ -178,7 +178,7 @@ const helpers = {
         return localStorage.getItem(skey);
       }
       catch (e) {
-        return null;
+        return e && null;
       }
     },
     setItem: function(skey, vEnd) {

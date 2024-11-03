@@ -107,10 +107,10 @@ esc_html_e( 'By user', 'bulletinwp' );
 
         <hr class="my-4">
 
-        <div class="radio-group-wrapper flex <?php 
+        <div class="radio-group-wrapper flex flex-wrap <?php 
 echo esc_attr( ( bulletinwp_fs()->is__premium_only() ? '' : 'pro-disabled' ) );
 ?>">
-            <div class="mr-4">
+            <div class="mr-4 mb-4">
                 <label class="radio-wrapper">
                 <input id="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-placement-by-user-everyone' );
@@ -129,7 +129,7 @@ esc_html_e( 'Show for everyone', 'bulletinwp' );
                 </label>
             </div>
 
-            <div class="mr-4">
+            <div class="mr-4 mb-4">
                 <label class="radio-wrapper">
                 <input id="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-placement-by-user-logged-in-users' );
@@ -148,7 +148,26 @@ esc_html_e( 'Only logged-in users', 'bulletinwp' );
                 </label>
             </div>
 
-            <div class="mr-4">
+            <div class="mr-4 mb-4">
+                <label class="radio-wrapper">
+                <input id="<?php 
+echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-placement-by-user-logged-out-users' );
+?>"
+                        type="radio"
+                        name="placementByUser"
+                        value="logged-out-users"
+                        <?php 
+checked( $placement_by_user === 'logged-out-users' );
+?>
+                />
+                <span class="thumb"></span>
+                <span><?php 
+esc_html_e( 'Only logged-out users', 'bulletinwp' );
+?></span>
+                </label>
+            </div>
+
+            <div class="mr-4 mb-4">
                 <label class="radio-wrapper">
                 <input id="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-placement-by-user-cookie-value' );
@@ -170,7 +189,7 @@ esc_html_e( 'Based on cookie value', 'bulletinwp' );
                 </label>
             </div>
 
-            <div>
+            <div class="mb-4">
                 <label class="radio-wrapper">
                 <input id="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-placement-by-user-ip-address' );

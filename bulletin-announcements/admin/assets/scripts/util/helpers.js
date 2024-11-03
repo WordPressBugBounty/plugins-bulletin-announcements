@@ -40,7 +40,7 @@ const helpers = {
         return localStorage.getItem(skey);
       }
       catch (e) {
-        return null;
+        return e && null;
       }
     },
     setItem: function(skey, vEnd) {
@@ -72,7 +72,7 @@ const helpers = {
         return localStorage.removeItem(sKey);
       }
       catch (e) {
-        return null;
+        return e && null;
       }
     },
     checkExpiryItem: function(sKey) {
@@ -107,7 +107,7 @@ const helpers = {
       try {
         return JSON.parse('{"' + decodeURI(params.replace(/&/g, ',').replace(/=/g,':')) + '"}');
       } catch (e) {
-        return {};
+        return e && {};
       }
     } else {
       return {};
