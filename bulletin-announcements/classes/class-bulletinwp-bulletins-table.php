@@ -143,15 +143,21 @@ class BULLETINWP_Bulletins_Table extends WP_List_Table {
         // All
         $class = ( $current == 'all' ? ' class="current"' : '' );
         $all_url = remove_query_arg( 'status' );
-        $views['all'] = "<a href='{$all_url}' {$class}>All (" . BULLETINWP::instance()->sql->get_all_bulletins_count() . ")</a>";
+        $all_url = esc_url( $all_url );
+        $all_bulletins_count = esc_html( BULLETINWP::instance()->sql->get_all_bulletins_count() );
+        $views['all'] = "<a href=\"{$all_url}\" {$class}>All ({$all_bulletins_count})</a>";
         // Active
-        $active_url = add_query_arg( 'status', 'active' );
         $class = ( $current == 'active' ? ' class="current"' : '' );
-        $views['active'] = "<a href='{$active_url}' {$class}>Active (" . BULLETINWP::instance()->sql->get_all_active_bulletins_count() . ")</a>";
+        $active_url = add_query_arg( 'status', 'active' );
+        $active_url = esc_url( $active_url );
+        $active_bulletins_count = esc_html( BULLETINWP::instance()->sql->get_all_active_bulletins_count() );
+        $views['active'] = "<a href=\"{$active_url}\" {$class}>Active ({$active_bulletins_count})</a>";
         // Inactive
-        $inactive_url = add_query_arg( 'status', 'inactive' );
         $class = ( $current == 'inactive' ? ' class="current"' : '' );
-        $views['inactive'] = "<a href='{$inactive_url}' {$class}>Inactive (" . BULLETINWP::instance()->sql->get_all_inactive_bulletins_count() . ")</a>";
+        $inactive_url = add_query_arg( 'status', 'inactive' );
+        $inactive_url = esc_url( $inactive_url );
+        $inactive_bulletins_count = esc_html( BULLETINWP::instance()->sql->get_all_inactive_bulletins_count() );
+        $views['inactive'] = "<a href=\"{$inactive_url}\" {$class}>Inactive ({$inactive_bulletins_count})</a>";
         return $views;
     }
 
