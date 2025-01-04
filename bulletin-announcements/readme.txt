@@ -3,8 +3,8 @@ Contributors: mikewire_rocksolid, freemius
 Tags: announcements, notifications, banners, notice, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
-Tested up to: 6.6.2
-Stable tag: 3.12.0
+Tested up to: 6.7.1
+Stable tag: 3.12.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -169,6 +169,10 @@ Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 You can get access to more features and priority support by <a href="https://www.rocksolidplugins.com/plugins/bulletin//?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.12.1 =
+* Upgrade Freemius 
+* Fix z-index issue 
 
 = 3.12.0 =
 * fix security issue

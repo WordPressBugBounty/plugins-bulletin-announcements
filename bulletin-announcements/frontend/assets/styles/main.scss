@@ -16,7 +16,6 @@
     opacity: 0;
     transition: all 0.3s ease;
     margin: 0 auto;
-    z-index: 9999;
 
     @media (min-width: $screen-sm-min) {
       padding: 12px 24px;
@@ -102,32 +101,6 @@
     }
   }
 
-  .#{$plugin_slug}-bulletin-powered-by-label {
-    background-color: #fff;
-    border: 1px solid #d8d8d8;
-    color: #bdbdbd;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    padding: 2px 5px;
-    position: absolute;
-    left: 10px;
-    text-decoration: none;
-    display: none;
-
-    a {
-      text-decoration: none;
-      color: #f77355;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    @media (min-width: $screen-sm-min) {
-      display: block;
-    }
-  }
-
   .#{$plugin_slug}-bulletin-admin-edit-link {
     background-color: #fff;
     border: 2px solid #000;
@@ -163,11 +136,6 @@
   width: 100%;
   max-width: none;
 
-  .#{$plugin_slug}-bulletin-powered-by-label {
-    top: 100%;
-    z-index: 2;
-  }
-
   .#{$plugin_slug}-bulletin-admin-edit-link {
     top: 100%;
     right: 0;
@@ -183,7 +151,7 @@
 .#{$plugin_slug}-bulletins.#{$plugin_slug}-placement-top.#{$plugin_slug}-top-fixed {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 1;
 }
 
 // sticky footer
@@ -191,12 +159,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 999;
-
-  .#{$plugin_slug}-bulletin-powered-by-label {
-    bottom: 100%;
-    z-index: 2;
-  }
+  z-index: 1;
 
   .#{$plugin_slug}-bulletin-admin-edit-link {
     right: 0;
@@ -210,7 +173,7 @@
   bottom: 0;
   width: 100%;
   padding: 0 8px 8px;
-  z-index: 999;
+  z-index: 1;
 
   @media (min-width: $screen-sm-min) {
     padding: 0 20px 20px;
@@ -222,10 +185,6 @@
     border-radius: 8px;
     transform-origin: center bottom;
     transform: scale(0.9);
-  }
-
-  .#{$plugin_slug}-bulletin-powered-by-label {
-    bottom: 100%;
   }
 
   .#{$plugin_slug}-bulletin-admin-edit-link {
@@ -245,7 +204,7 @@
   position: fixed;
   width: 100%;
   padding: 8px 8px;
-  z-index: 999;
+  z-index: 1;
 
   @media (min-width: $screen-sm-min) {
     padding: 20px 20px;
