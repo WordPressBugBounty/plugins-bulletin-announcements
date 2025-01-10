@@ -612,6 +612,9 @@ video {
   position: fixed;
 }.relative {
   position: relative;
+}.-mx-2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }.-mx-4 {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -740,6 +743,9 @@ video {
   padding: 1rem;
 }.p-8 {
   padding: 2rem;
+}.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }.px-4 {
   padding-left: 1rem;
   padding-right: 1rem;

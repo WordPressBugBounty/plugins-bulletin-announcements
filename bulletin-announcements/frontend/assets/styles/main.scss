@@ -151,7 +151,7 @@
 .#{$plugin_slug}-bulletins.#{$plugin_slug}-placement-top.#{$plugin_slug}-top-fixed {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 // sticky footer
@@ -159,7 +159,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 
   .#{$plugin_slug}-bulletin-admin-edit-link {
     right: 0;
@@ -204,7 +204,7 @@
   position: fixed;
   width: 100%;
   padding: 8px 8px;
-  z-index: 1;
+  z-index: 100;
 
   @media (min-width: $screen-sm-min) {
     padding: 20px 20px;
@@ -289,4 +289,9 @@
   @media (max-width: $screen-sm-min) {
     display: none;
   }
+}
+
+// has placement location
+.#{$plugin_slug}-bulletins[data-placement-location] {
+  display: none;
 }

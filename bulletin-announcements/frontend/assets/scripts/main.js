@@ -4,7 +4,6 @@ import helpers from './util/helpers';
 
 const main = () => {
   jQuery(document).ready(function ($) {
-
     const bulletinWPContainer = $(`#${window.BULLETINWP['pluginSlug']}-generator`);
     if (bulletinWPContainer) {
       const bulletinWP = bulletinWPContainer.find(`.${window.BULLETINWP['pluginSlug']}-bulletins`);

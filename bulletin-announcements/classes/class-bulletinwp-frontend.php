@@ -74,7 +74,6 @@ class BULLETINWP_Frontend {
             true
         );
         wp_localize_script( "{$plugin_slug}-frontend-scripts", 'BULLETINWP', [
-            'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
             'pluginSlug' => $plugin_slug,
         ] );
     }
@@ -88,7 +87,7 @@ class BULLETINWP_Frontend {
      * @since 1.0.0
      *
      */
-    public function insert_bulletins_by_placement( $placement, $corner_position = '' ) {
+    public function insert_bulletins_by_placement( $placement, $corner_position = null ) {
         $bulletins = [];
         if ( BULLETINWP::instance()->helpers->maybe_in_preview_mode() ) {
             if ( !empty( $bulletin_id = BULLETINWP::instance()->helpers->get_preview_mode_bulletin_id() ) && BULLETINWP::instance()->sql->get_bulletin_data( $bulletin_id, 'placement' ) === $placement ) {
@@ -162,7 +161,6 @@ class BULLETINWP_Frontend {
             'data-header-banner-scroll'  => [],
             'data-site-has-fixed-header' => [],
             'data-fixed-header-selector' => [],
-            'data-expiry-datetime'       => [],
             'data-id'                    => [],
             'data-cycle-speed'           => [],
             'data-marquee-speed'         => [],
@@ -194,6 +192,7 @@ class BULLETINWP_Frontend {
             'data-input-placeholder'     => [],
             'data-panel-id'              => [],
             'data-action-type'           => [],
+            'data-placement-location'    => [],
         ];
         $svg_kses = BULLETINWP::instance()->helpers->get_kses_allowed_protocols_for_svg();
         $allowed_tags = [];

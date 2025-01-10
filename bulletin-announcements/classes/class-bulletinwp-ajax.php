@@ -13,19 +13,15 @@ class BULLETINWP_Ajax {
             'bulletinwp_export_bulletins',
             'bulletinwp_import_bulletins'
         ];
-        $frontend_actions = ['bulletinwp_check_expiry'];
         foreach ( $actions as $action ) {
             /**
              * For admin ajax
              */
             add_action( "wp_ajax_{$action}", array($this, $action) );
-        }
-        foreach ( $frontend_actions as $action ) {
             /**
              * For front end ajax; Only enable below if any front end ajax used
              */
-            add_action( "wp_ajax_{$action}", array($this, $action) );
-            add_action( "wp_ajax_nopriv_{$action}", array($this, $action) );
+            // add_action( "wp_ajax_nopriv_$action", array( $this, $action ) );
         }
     }
 
@@ -341,31 +337,6 @@ class BULLETINWP_Ajax {
         }
         wp_send_json_success( [
             'message' => __( 'Invalid csv data', 'bulletinwp' ),
-        ] );
-    }
-
-    /**
-     * Check bulletin expiry
-     *
-     * @since 3.10.4
-     *
-     * @param void
-     * @return void
-     */
-    public function bulletinwp_check_expiry() {
-        $id = $_POST['id'];
-        $expiry_date = $_POST['expiry_date'];
-        $expiry_timestamp = new DateTime($expiry_date);
-        if ( !empty( $timezone_string = BULLETINWP::instance()->helpers->get_timezone_string() ) ) {
-            $expiry_timestamp->setTimezone( new \DateTimeZone($timezone_string) );
-        }
-        $current_timestamp = current_datetime();
-        $is_expired = $expiry_timestamp < $current_timestamp;
-        wp_send_json_success( [
-            'id'           => $id,
-            'expiry_date'  => $expiry_timestamp,
-            'current_date' => $current_timestamp,
-            'expired'      => $is_expired,
         ] );
     }
 

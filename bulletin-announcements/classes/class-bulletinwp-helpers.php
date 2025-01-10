@@ -66,6 +66,42 @@ class BULLETINWP_Helpers {
     }
 
     /**
+     * Get the adjusted timestamp
+     *
+     * @param string $datetime_string Date and time in 'Y/m/d H:i' format.
+     *
+     * @return int Unix timestamp.
+     * @since 3.13.0
+     *
+     */
+    public function get_adjusted_timestamp( $datetime_string ) {
+        if ( function_exists( 'wp_date' ) ) {
+            $timezone = $this->get_timezone_string();
+            if ( !$timezone ) {
+                // Fall back to gmt_offset if timezone_string is not set
+                $gmt_offset = get_option( 'gmt_offset' );
+                $timezone = timezone_name_from_abbr( '', $gmt_offset * 3600, 0 );
+            }
+            // Create a DateTime object for the local time
+            $datetime = new \DateTime($datetime_string);
+            $datetime->setTimezone( new \DateTimeZone($timezone) );
+            // Get the offset of the timezone to set the date time correctly on the cron event
+            $timezone_offset = $datetime->getOffset() / 3600;
+            if ( $timezone_offset > 0 ) {
+                $sub_hours = $timezone_offset * 2;
+                $datetime->sub( new \DateInterval("PT{$sub_hours}H") );
+            } elseif ( $timezone_offset < 0 ) {
+                $add_hours = $timezone_offset * -2;
+                $datetime->add( new \DateInterval("PT{$add_hours}H") );
+            }
+            $datetime = $datetime->format( 'm/d/Y H:i:s' );
+        } else {
+            $datetime = gmdate( 'm/d/Y H:i:s', strtotime( $datetime_string ) );
+        }
+        return strtotime( $datetime );
+    }
+
+    /**
      * Get bulletin link
      *
      * @param string $bulletin_id

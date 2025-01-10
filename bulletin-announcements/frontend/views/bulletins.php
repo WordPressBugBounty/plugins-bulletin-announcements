@@ -46,6 +46,9 @@ if ( is_customize_preview() || !empty( $bulletins ) ) {
          data-fixed-header-selector="<?php 
         echo esc_attr( $fixed_header_selector );
         ?>"
+
+         <?php 
+        ?>
     >
       <?php 
         $bulletin_title = ( isset( $bulletin['bulletin_title'] ) && !empty( $bulletin['bulletin_title'] ) ? $bulletin['bulletin_title'] : '' );
