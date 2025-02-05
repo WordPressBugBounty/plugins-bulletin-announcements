@@ -4,7 +4,7 @@ Tags: announcements, notifications, banners, notice, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
 Tested up to: 6.7.1
-Stable tag: 3.13.0
+Stable tag: 3.13.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -169,6 +169,9 @@ Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 You can get access to more features and priority support by <a href="https://www.rocksolidplugins.com/plugins/bulletin//?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.13.1 =
+* Small security updates
 
 = 3.13.0 =
 * Implement cache feature 
