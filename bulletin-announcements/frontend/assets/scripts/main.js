@@ -94,7 +94,10 @@ const main = () => {
               // Get position type of header selector -- determine if sticky or fixed
               const selectedElementDOMStylePosition = window.getComputedStyle(selectedElementDOM).position;
               if (selectedElementDOMStylePosition === 'sticky' || selectedElementDOMStylePosition === 'fixed') {
-                domElement.style.position = selectedElementDOMStylePosition;
+                // Only set position if not already sticky
+                if (window.getComputedStyle(domElement).position !== 'sticky') {
+                  domElement.style.position = selectedElementDOMStylePosition;
+                }
               }
 
               // Set top position if below or above selector header
@@ -125,7 +128,6 @@ const main = () => {
               // Only apply to `position: fixed` as `sticky` has kind off a placeholder height
               if (window.getComputedStyle(selectedElementDOM).position === 'fixed') {
                 const topMargin = selectedElement.outerHeight();
-
                 domElement.style.marginTop = topMargin + 'px';
               }
             }
