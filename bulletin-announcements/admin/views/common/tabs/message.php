@@ -201,13 +201,13 @@ echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-markdown-item' );
   <hr class="my-4">
 
   <div class="flex flex-wrap -mx-4">
-    <div class="form-field form-field-text w-full lg:w-1/2 mb-4 lg:mb-0 px-4">
+    <div class="form-field form-field-text w-full lg:w-1/2 mb-4 lg:mb-0 px-4 is-required">
       <label class="mb-2" for="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-content' );
 ?>">
         <?php 
 esc_html_e( 'Tablet and up', 'bulletinwp' );
-?>
+?> <span class="text-red-200">*</span>
       </label>
       <textarea id="<?php 
 echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-content' );
@@ -216,6 +216,7 @@ echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-content' );
                 type="text"
                 name="content"
                 placeholder=""
+                required
       ><?php 
 echo esc_textarea( $content );
 ?></textarea>

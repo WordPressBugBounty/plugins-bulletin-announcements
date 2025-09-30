@@ -3,8 +3,8 @@ Contributors: mikewire_rocksolid, freemius
 Tags: announcements, notifications, banners, notice, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
-Tested up to: 6.8.1
-Stable tag: 3.13.2
+Tested up to: 6.8.2
+Stable tag: 3.13.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,6 +60,8 @@ You can also check out these demos:
 * [Sticky footer with custom image](https://demo.rocksolidplugins.com/bulletin/sticky-footer-with-custom-image/)
 * [Corner with button](https://demo.rocksolidplugins.com/bulletin/corner-with-button/)
 * [Trigger an easy popup](https://demo.rocksolidplugins.com/easy-popup-demos/popup-manually-triggered-from-bulletin/)
+* [Animated button to grab attention](https://demo.rocksolidplugins.com/bulletin/button-animation/)
+
 
 You can also check out the [docs on our site](https://www.rocksolidplugins.com/docs/bulletin/?utm_source=bulletinwprepo&utm_medium=link), which are extended regularly.
 
@@ -75,7 +77,7 @@ The basic Bulletin plugin allows you to add unlimited bulletins and use markdown
 The Pro version of Bulletin comes packed with features:
 
 **👋🏼 Buttons & Call to actions**
-Add a button with link or trigger JS event
+Add a button with link or trigger JS event. Even add [funky button effects to grab attention](https://demo.rocksolidplugins.com/bulletin/button-animation/)!
 
 **👻 Custom icons and google fonts**
 Make it your own using cool icons and stylish google fonts.
@@ -169,6 +171,11 @@ Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 You can get access to more features and priority support by <a href="https://www.rocksolidplugins.com/plugins/bulletin//?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.13.4 =
+* Upgrade freemius
+* Small fixes and optimisations
+* NEW: Button animations. Grab the attention of the user by making your button move (in a subtle way)!
 
 = 3.13.2 =
 * Update to sticky feature

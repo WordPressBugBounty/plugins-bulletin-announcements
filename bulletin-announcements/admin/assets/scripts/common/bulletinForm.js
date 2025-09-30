@@ -74,7 +74,7 @@ const bulletinFormFunction = (bulletinwpAdmin) => {
             const tabPaneID = thisRequiredField.closest('.tab-pane').first().attr('id');
             const tabItem = thisBulletinForm.find(`.tab-item[data-tab="#${tabPaneID}"]`);
 
-            if (thisRequiredField.is(':visible') && formInput.val() === '' || formInput.val() === null) {
+            if (thisRequiredField.is(':visible') && (formInput.val() === '' || formInput.val() === null)) {
               hasError = true;
               tabItem.addClass('tab-error');
               thisRequiredField.addClass('form-field-error');
