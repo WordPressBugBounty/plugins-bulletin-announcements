@@ -193,6 +193,29 @@ echo esc_attr( BULLETINWP_PLUGIN_SLUG . '-markdown-item' );
             </div>
           </div>
 
+          <?php 
+if ( bulletinwp_fs()->is__premium_only() && BULLETINWP::instance()->pro->maybe_easy_popups_plugin_is_activated() ) {
+    ?>
+            <div class="flex my-4">
+              <div class="w-1/2 px-4">
+                <p class="font-couriernew">
+                  [<?php 
+    esc_html_e( 'link text', 'bulletinwp' );
+    ?>](#easy-popup-ID)
+                </p>
+              </div>
+              <div class="w-1/2 px-4">
+                <div>
+                  <p><?php 
+    esc_html_e( 'triggers Easy Popup by ID', 'bulletinwp' );
+    ?></p>
+                </div>
+              </div>
+            </div>
+          <?php 
+}
+?>
+
         </div>
       </div>
     </div>

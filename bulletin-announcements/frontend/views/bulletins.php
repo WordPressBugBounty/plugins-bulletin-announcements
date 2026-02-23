@@ -200,8 +200,13 @@ if ( is_customize_preview() || !empty( $bulletins ) ) {
             }
             ?>
 
-                <!-- Countdown -->
                 <?php 
+            $countdown_alignment = 'left';
+            $countdown_markup = '';
+            if ( $countdown_alignment !== 'right' && !empty( $countdown_markup ) ) {
+                echo $countdown_markup;
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup already escaped above
+            }
             ?>
 
                 <!-- Message -->
@@ -211,6 +216,17 @@ if ( is_customize_preview() || !empty( $bulletins ) ) {
             include BULLETINWP_PLUGIN_PATH . 'frontend/views/partials/simple-content.php';
             ?>
                 <?php 
+            ?>
+
+                <?php 
+            if ( $countdown_alignment === 'right' && !empty( $countdown_markup ) ) {
+                ?>
+                  <?php 
+                echo $countdown_markup;
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- markup already escaped above
+                ?>
+                <?php 
+            }
             ?>
 
                 <?php 

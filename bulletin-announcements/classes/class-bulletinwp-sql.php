@@ -122,7 +122,10 @@ class BULLETINWP_SQL {
     private function maybe_bulletins_table_insert_columns_needed() {
         $plugin_version = $this->get_option( 'plugin_version' );
         $latest_plugin_version = BULLETINWP_PLUGIN_VERSION;
-        return empty( $plugin_version ) || $plugin_version !== $latest_plugin_version;
+        if ( empty( $plugin_version ) || $plugin_version !== $latest_plugin_version ) {
+            return true;
+        }
+        return false;
     }
 
     /**

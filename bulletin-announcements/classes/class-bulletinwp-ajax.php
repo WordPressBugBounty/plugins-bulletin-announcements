@@ -166,6 +166,9 @@ class BULLETINWP_Ajax {
                     } elseif ( in_array( strtolower( $field ), ['on', 'off'], true ) ) {
                         $field = 'on' === strtolower( $field );
                     }
+                    if ( in_array( $key, ['enableCountdownLabels', 'enableCountdownSemicolon'], true ) ) {
+                        $field = ( $field ? '1' : '0' );
+                    }
                     $args['data'][$bulletin_column_names_map[$key]] = $field;
                 }
             }
