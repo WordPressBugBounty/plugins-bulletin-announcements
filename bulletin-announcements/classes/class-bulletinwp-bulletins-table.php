@@ -355,7 +355,7 @@ class BULLETINWP_Bulletins_Table extends WP_List_Table {
     public function process_bulk_action() {
         // Security check!
         if ( isset( $_GET['_wpnonce'] ) && !empty( $_GET['_wpnonce'] ) && isset( $_GET['bulletin'] ) ) {
-            $nonce = filter_input( INPUT_GET, '_wpnonce', FILTER_SANITIZE_STRING );
+            $nonce = sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) );
             $action = -1;
             if ( is_array( $_GET['bulletin'] ) ) {
                 $action = 'bulk-' . $this->_args['plural'];

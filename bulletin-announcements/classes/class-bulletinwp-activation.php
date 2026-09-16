@@ -97,6 +97,11 @@ class BULLETINWP_Activation {
    *
    */
   public function child_site_create_plugin_tables() {
+    // is_plugin_active_for_network() lives in wp-admin/includes/plugin.php (admin only).
+    if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+      return;
+    }
+
     $plugin_file_path = BULLETINWP::instance()->helpers->get_plugin_file_path();
 
     if ( ! empty( $plugin_file_path )
@@ -134,17 +139,18 @@ class BULLETINWP_Activation {
    *
    */
   private function create_plugin_tables() {
+    // Options table first: bulletins_table_insert_columns() stores plugin_version in it.
+    if ( BULLETINWP::instance()->sql->maybe_create_options_table() ) {
+      // Create options table
+      BULLETINWP::instance()->sql->create_options_table();
+    }
+
     if ( BULLETINWP::instance()->sql->maybe_create_bulletins_table() ) {
       // Create bulletins table
       BULLETINWP::instance()->sql->create_bulletins_table();
 
       // Insert columns on bulletins table
       BULLETINWP::instance()->sql->bulletins_table_insert_columns();
-    }
-
-    if ( BULLETINWP::instance()->sql->maybe_create_options_table() ) {
-      // Create options table
-      BULLETINWP::instance()->sql->create_options_table();
     }
   }
 

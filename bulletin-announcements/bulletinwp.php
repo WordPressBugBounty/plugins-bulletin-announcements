@@ -4,7 +4,7 @@
  * Plugin Name: Bulletin Announcements
  * Plugin URI: https://www.rocksolidplugins.com/plugins/bulletin/
  * Description: Publish a slick announcement banner notice across your website or Woocommerce shop. Extend with icons, countdowns, placement rules and more!
- * Version: 3.14.0
+ * Version: 3.14.1
  * Author: Bulletin
  * Author URI: https://www.rocksolidplugins.com/
  * Text Domain: bulletinwp
@@ -38,20 +38,21 @@ if ( function_exists( 'bulletinwp_fs' ) ) {
                 // Include Freemius SDK.
                 require_once dirname( __FILE__ ) . '/modules/freemius/start.php';
                 $bulletinwp_fs = fs_dynamic_init( [
-                    'id'             => '5823',
-                    'slug'           => 'bulletinwp',
-                    'premium_slug'   => 'bulletinwp-pro',
-                    'type'           => 'plugin',
-                    'public_key'     => 'pk_98562b78b1d3c58b6e301de2eba5f',
-                    'is_premium'     => false,
-                    'premium_suffix' => 'PRO',
-                    'has_addons'     => false,
-                    'has_paid_plans' => true,
-                    'menu'           => [
+                    'id'               => '5823',
+                    'slug'             => 'bulletinwp',
+                    'premium_slug'     => 'bulletinwp-pro',
+                    'type'             => 'plugin',
+                    'public_key'       => 'pk_98562b78b1d3c58b6e301de2eba5f',
+                    'is_premium'       => false,
+                    'premium_suffix'   => 'PRO',
+                    'has_addons'       => false,
+                    'has_paid_plans'   => true,
+                    'menu'             => [
                         'slug'    => BULLETINWP_PLUGIN_SLUG . '-options',
                         'support' => false,
                     ],
-                    'is_live'        => true,
+                    'is_live'          => true,
+                    'is_org_compliant' => true,
                 ] );
             }
             return $bulletinwp_fs;
@@ -100,8 +101,10 @@ if ( function_exists( 'bulletinwp_fs' ) ) {
         public $pro;
 
         public function __construct() {
+            // Activation/deactivation hooks must be registered on every request type
+            // (WP-CLI and REST activations are not is_admin()).
+            $this->activation = new BULLETINWP_Activation();
             if ( is_admin() ) {
-                $this->activation = new BULLETINWP_Activation();
                 $this->admin = new BULLETINWP_Admin();
                 $this->ajax = new BULLETINWP_Ajax();
                 $this->api = new BULLETINWP_API();

@@ -282,7 +282,7 @@ class BULLETINWP_Admin {
         if ( BULLETINWP::instance()->api->is_page_in_plugin() && isset( $_GET['page'], $_SERVER['HTTP_REFERER'] ) && sanitize_text_field( $_GET['page'] ) === self::$menu_page_base_slug ) {
             $referer = filter_var( $_SERVER['HTTP_REFERER'], FILTER_SANITIZE_URL );
             $url_query = wp_parse_url( $referer, PHP_URL_QUERY );
-            parse_str( $url_query, $url_query_array );
+            parse_str( (string) $url_query, $url_query_array );
             if ( !empty( $url_query_array['_wpnonce'] ) ) {
                 $bulletins_count = 0;
                 $action_label = '';
