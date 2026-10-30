@@ -4,7 +4,7 @@ Tags: announcements, notifications, banners, notice, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
 Tested up to: 7.1
-Stable tag: 3.14.1
+Stable tag: 3.15.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,9 +14,9 @@ Publish a slick announcement banner notice across your website or Woocommerce sh
 
 = Announcement Banner =
 
-[View demos here](https://demo.rocksolidplugins.com/bulletin/) | [View docs here](https://www.rocksolidplugins.com/docs/bulletin/)
+[View demos here](https://demo.rocksolidplugins.com/bulletin/) | [View docs here](https://rocksolidplugins.com/docs/bulletin/)
 
-Over 1k active installs and many happy customers! We have a perfect average 5 star review.
+Over 2k active installs and many happy customers, with lots of 5-star reviews!
 
 See some customer reviews below: 
 
@@ -32,7 +32,7 @@ _"I really like this bulletin plugin, it’s the best I’ve seen!"_
 
 _"Fantastic Plugin, so versatile!"_
 
-**[Bulletin](https://www.rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link)** is a lightweight plugin that shows announcement banners, sale offers and shop notices on your website.
+**[Bulletin](https://rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link)** is a lightweight plugin that shows announcement banners, sale offers and shop notices on your website.
 
 Here are a few of the typical scenarios when you would use Bulletin:
 
@@ -63,7 +63,7 @@ You can also check out these demos:
 * [Animated button to grab attention](https://demo.rocksolidplugins.com/bulletin/button-animation/)
 
 
-You can also check out the [docs on our site](https://www.rocksolidplugins.com/docs/bulletin/?utm_source=bulletinwprepo&utm_medium=link), which are extended regularly.
+You can also check out the [docs on our site](https://rocksolidplugins.com/docs/bulletin/?utm_source=bulletinwprepo&utm_medium=link), which are extended regularly.
 
 Do you have a fixed navigation bar or would like to display a bulletin under your nav? Check out the videos below:
 
@@ -123,7 +123,7 @@ Ability to add your own CSS with each bulletin (handy for those pesky fixed head
 
 = Credits =
 
-This plugin is created by <a href="https://www.rocksolidplugins.com?utm_source=bulletinwprepo&utm_medium=link" rel="friend" title="Rock Solid Plugins">Rock Solid Plugins</a>.
+This plugin is created by <a href="https://rocksolidplugins.com?utm_source=bulletinwprepo&utm_medium=link" rel="friend" title="Rock Solid Plugins">Rock Solid Plugins</a>.
 
 _Also check out our new popup plugin [Easy Popups](https://wordpress.org/plugins/easy-popups/)! Create easy popups / modals on your site and even link to them from bulletins!_
 
@@ -133,7 +133,7 @@ _Also check out our new popup plugin [Easy Popups](https://wordpress.org/plugins
 2. Add a new bulletin by adding a simple message, colors, display type and a few other options
 3. Preview the bulletin on your Website
 4. If all looks good, publish and you're done!
-5. For much more advanced options, why not checkout our Pro version! Head over to [our website](https://www.rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link) for more info and pricing.
+5. For much more advanced options, why not checkout our Pro version! Head over to [our website](https://rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link) for more info and pricing.
 
 == Screenshots ==
 
@@ -168,9 +168,15 @@ Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 
 = How can I get access to all features? =
 
-You can get access to more features and priority support by <a href="https://www.rocksolidplugins.com/plugins/bulletin/?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
+You can get access to more features and priority support by <a href="https://rocksolidplugins.com/plugins/bulletin/?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.15.0 =
+* New: a small, dismissible prompt in the Bulletin admin pages asking for a review on WordPress.org (shown once you've used Bulletin for two weeks)
+* Upgrade Freemius SDK to 2.13.5
+* Fix: Bulletin's orange link style no longer applies to admin notices from other plugins on Bulletin pages
+* Updated links to rocksolidplugins.com
 
 = 3.14.1 =
 * Upgrade Freemius SDK to 2.13.4

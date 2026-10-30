@@ -63,18 +63,7 @@
     @apply text-3lg;
   }
 
-  a {
-    @apply text-orange-100 underline;
-
-    &:focus {
-      @apply outline-none;
-
-      box-shadow: none;
-    }
-    &:hover {
-      @apply no-underline;
-    }
-  }
+  // Link styles live in links.css: node-sass can't compile the :not() selector they need
 
   img {
     @apply border-none;

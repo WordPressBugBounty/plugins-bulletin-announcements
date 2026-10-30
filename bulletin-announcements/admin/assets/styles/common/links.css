@@ -1,0 +1,19 @@
+/*
+ * Bulletin's link style, scoped away from admin notices: WordPress moves every notice (from any plugin)
+ * into #bulletinwp-admin, and they should keep WordPress' own link styling.
+ * Plain CSS because node-sass drops :not() selectors that contain a descendant combinator.
+ * :where() keeps the specificity of the old "#bulletinwp-admin a" rule, so component styles still win.
+ */
+#bulletinwp-admin a:where(:not(.notice a)) {
+  color: #f77355;
+  text-decoration: underline;
+}
+
+#bulletinwp-admin a:where(:not(.notice a)):focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#bulletinwp-admin a:where(:not(.notice a)):hover {
+  text-decoration: none;
+}

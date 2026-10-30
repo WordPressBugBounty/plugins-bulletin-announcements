@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: Bulletin Announcements
- * Plugin URI: https://www.rocksolidplugins.com/plugins/bulletin/
+ * Plugin URI: https://rocksolidplugins.com/plugins/bulletin/
  * Description: Publish a slick announcement banner notice across your website or Woocommerce shop. Extend with icons, countdowns, placement rules and more!
- * Version: 3.14.1
+ * Version: 3.15.0
  * Author: Bulletin
- * Author URI: https://www.rocksolidplugins.com/
+ * Author URI: https://rocksolidplugins.com/
  * Text Domain: bulletinwp
  * Domain Path: /languages
  *
@@ -74,6 +74,7 @@ if ( function_exists( 'bulletinwp_fs' ) ) {
     include_once 'classes/class-bulletinwp-helpers.php';
     include_once 'classes/class-bulletinwp-import.php';
     include_once 'classes/class-bulletinwp-language.php';
+    include_once 'classes/class-bulletinwp-review-notice.php';
     include_once 'classes/class-bulletinwp-sql.php';
     final class BULLETINWP {
         private static $_instance = null;
@@ -96,6 +97,8 @@ if ( function_exists( 'bulletinwp_fs' ) ) {
 
         public $language;
 
+        public $review_notice;
+
         public $sql;
 
         public $pro;
@@ -110,6 +113,7 @@ if ( function_exists( 'bulletinwp_fs' ) ) {
                 $this->api = new BULLETINWP_API();
                 $this->export = new BULLETINWP_Export();
                 $this->import = new BULLETINWP_Import();
+                $this->review_notice = new BULLETINWP_Review_Notice();
             } else {
                 add_action( 'plugins_loaded', array($this, 'frontend_init') );
             }

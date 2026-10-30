@@ -169,5 +169,7 @@ class BULLETINWP_Activation {
 
     // Delete options table
     BULLETINWP::instance()->sql->delete_options_table();
+
+    delete_option( BULLETINWP_Review_Notice::OPTION_KEY );
   }
 }
