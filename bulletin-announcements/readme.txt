@@ -1,18 +1,18 @@
-=== Announcement & Notification Banner - Bulletin ===
+=== Announcement Bar, Notification Bar & Banner – Bulletin ===
 Contributors: mikewire_rocksolid, freemius
-Tags: announcements, notifications, banners, notice, countdown
+Tags: announcement bar, notification bar, top bar, sticky banner, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
 Tested up to: 7.1
-Stable tag: 3.15.0
+Stable tag: 3.15.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Publish a slick announcement banner notice across your website or Woocommerce shop. Extend with icons, countdowns, placement rules and more!
+Add an announcement bar, notification bar or sticky banner to your site or WooCommerce shop. Extend with countdowns, buttons and placement rules.
 
 == Description ==
 
-= Announcement Banner =
+= Announcement bar and notification bar for WordPress =
 
 [View demos here](https://demo.rocksolidplugins.com/bulletin/) | [View docs here](https://rocksolidplugins.com/docs/bulletin/)
 
@@ -32,7 +32,7 @@ _"I really like this bulletin plugin, it’s the best I’ve seen!"_
 
 _"Fantastic Plugin, so versatile!"_
 
-**[Bulletin](https://rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link)** is a lightweight plugin that shows announcement banners, sale offers and shop notices on your website.
+**[Bulletin](https://rocksolidplugins.com/plugins/bulletin/?utm_source=bulletinwprepo&utm_medium=link)** is a lightweight announcement bar and notification bar plugin. Show a sticky top bar in your header, a floating bar at the bottom of the screen or a sticky footer banner with sale offers, countdowns and shop notices, on any WordPress site or WooCommerce store.
 
 Here are a few of the typical scenarios when you would use Bulletin:
 
@@ -103,7 +103,7 @@ Ability to add your own CSS with each bulletin (handy for those pesky fixed head
 ## Free Version Features
 1. Desktop and mobile messages
 1. Background and text colors
-1. Header, floating at bottom and sticky footer display types
+1. Header (top bar), floating bar at bottom and sticky footer display types
 1. Content max-width
 1. Text alignment and font size
 
@@ -158,9 +158,13 @@ _Also check out our new popup plugin [Easy Popups](https://wordpress.org/plugins
 
 Bulletin is perfect for business owners, bloggers, Woocommerce shop owners, developers, photographers, and basically everyone else. If you have a website and you want to make announcements to your users, Bulletin is for you!
 
-= Do I need to know how to code to us Bulletin? =
+= Do I need to know how to code to use Bulletin? =
 
 Coding skills aren't needed, however there might be instances where a bulletin conflicts with other UI elements in your theme. In this case you may need a developer to add some custom CSS (which is possible in the PRO version).
+
+= Can I show the bar at the top or the bottom of the page? =
+
+Yes. A bulletin can be a top bar in your header, a floating bar at the bottom of the screen or a sticky footer bar. The Pro version adds a corner display type and lets you show the bar only on selected pages or for logged-in users.
 
 = Can I see some examples of actual bulletins on a website? =
 
@@ -171,6 +175,9 @@ Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 You can get access to more features and priority support by <a href="https://rocksolidplugins.com/plugins/bulletin/?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.15.1 =
+* Updated plugin description
 
 = 3.15.0 =
 * New: a small, dismissible prompt in the Bulletin admin pages asking for a review on WordPress.org (shown once you've used Bulletin for two weeks)
