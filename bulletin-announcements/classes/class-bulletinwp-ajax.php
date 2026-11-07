@@ -245,6 +245,7 @@ class BULLETINWP_Ajax {
                 'bulletinFontColorDefault'       => 'bulletin_font_color_default',
                 'siteHasFixedHeader'             => 'site_has_fixed_header',
                 'fixedHeaderSelector'            => 'fixed_header_selector',
+                'deleteDataOnUninstall'          => 'delete_data_on_uninstall',
             ];
             foreach ( $form_data as $key => $field ) {
                 if ( array_key_exists( $key, $settings_options_names_map ) ) {

@@ -4,7 +4,7 @@ Tags: announcement bar, notification bar, top bar, sticky banner, countdown
 Requires at least: 5.0
 Requires PHP: 7.2
 Tested up to: 7.1
-Stable tag: 3.15.1
+Stable tag: 3.16.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -170,11 +170,18 @@ Yes. A bulletin can be a top bar in your header, a floating bar at the bottom of
 
 Take a look at our [Demo site](https://demo.rocksolidplugins.com/bulletin/)
 
+= What happens to my bulletins if I delete the plugin? =
+
+They are kept. Deleting Bulletin leaves your bulletins and settings in the database, so reinstalling picks up where you left off. To remove everything, go to Bulletin > Settings, turn on the Uninstall option and save before deleting the plugin.
+
 = How can I get access to all features? =
 
 You can get access to more features and priority support by <a href="https://rocksolidplugins.com/plugins/bulletin/?utm_source=WordPress&utm_campaign=wp-org-repo&utm_medium=readme" rel="friend" title="Click here to learn more about Bulletin!">upgrading to our Pro version</a>. Purchasing a Pro license gets you access to the full version of Bulletin, automatic updates and priority support!
 
 == Changelog ==
+
+= 3.16.0 =
+* New: bulletins and settings are kept when you delete the plugin, so you can reinstall later without losing anything. Turn on Settings > Uninstall > "Delete all bulletins and settings" to remove them instead
 
 = 3.15.1 =
 * Updated plugin description

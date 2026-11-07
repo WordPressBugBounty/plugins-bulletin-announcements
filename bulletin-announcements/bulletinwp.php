@@ -4,7 +4,7 @@
  * Plugin Name: Bulletin Announcements
  * Plugin URI: https://rocksolidplugins.com/plugins/bulletin/
  * Description: Publish a slick announcement banner notice across your website or Woocommerce shop. Extend with icons, countdowns, placement rules and more!
- * Version: 3.15.1
+ * Version: 3.16.0
  * Author: Bulletin
  * Author URI: https://rocksolidplugins.com/
  * Text Domain: bulletinwp

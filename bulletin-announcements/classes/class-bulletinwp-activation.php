@@ -63,7 +63,8 @@ class BULLETINWP_Activation {
   }
 
   /**
-   * Run functions when plugin is unsintalled
+   * Run functions when plugin is uninstalled. Data is only removed when
+   * "Delete all data on uninstall" is on in Settings.
    *
    * @param void
    *
@@ -164,6 +165,11 @@ class BULLETINWP_Activation {
    *
    */
   private function delete_plugin_tables() {
+    // Keep bulletins and settings unless the site chose to delete them (Settings > Uninstall).
+    if ( ! BULLETINWP::instance()->sql->get_option( 'delete_data_on_uninstall' ) ) {
+      return;
+    }
+
     // Delete bulletins table
     BULLETINWP::instance()->sql->delete_bulletins_table();
 

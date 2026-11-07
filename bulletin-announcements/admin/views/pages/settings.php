@@ -6,6 +6,7 @@ $bulletin_background_color_default = BULLETINWP::instance()->sql->get_option( 'b
 $bulletin_font_color_default = BULLETINWP::instance()->sql->get_option( 'bulletin_font_color_default' );
 $site_has_fixed_header = BULLETINWP::instance()->sql->get_option( 'site_has_fixed_header' );
 $fixed_header_selector = BULLETINWP::instance()->sql->get_option( 'fixed_header_selector' );
+$delete_data_on_uninstall = BULLETINWP::instance()->sql->get_option( 'delete_data_on_uninstall' );
 ?>
 
 <div id="<?php 
@@ -189,6 +190,33 @@ esc_html_e( 'Import', 'bulletinwp' );
 ?>
                     </button>
                     <div class="import-results-message mt-4" style="display: none;"></div>
+                  </div>
+                </div>
+
+                <!-- Uninstall -->
+                <div class="heading mb-3"><?php 
+esc_html_e( 'Uninstall', 'bulletinwp' );
+?></div>
+
+                <div class="mb-6">
+                  <label class="mb-3"><?php 
+esc_html_e( 'Delete all bulletins and settings when Bulletin is deleted. Leave this off to keep your data, so you can reinstall later and pick up where you left off.', 'bulletinwp' );
+?></label>
+
+                  <div class="checkbox-wrapper toggle-switch"
+                       data-checked-label="<?php 
+echo esc_attr( esc_html__( 'Yes', 'bulletinwp' ) );
+?>"
+                       data-unchecked-label="<?php 
+echo esc_attr( esc_html__( 'No', 'bulletinwp' ) );
+?>"
+                  >
+                    <input type="checkbox" name="deleteDataOnUninstall" <?php 
+checked( $delete_data_on_uninstall );
+?> />
+                    <span class="label"><?php 
+echo esc_html( ( $delete_data_on_uninstall ? esc_html__( 'Yes', 'bulletinwp' ) : esc_html__( 'No', 'bulletinwp' ) ) );
+?></span>
                   </div>
                 </div>
               </div>
